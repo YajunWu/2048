@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="format-detection" content="telephone=no" />
     <title>公平价2048</title>
-    <link rel="stylesheet" type="text/css" href="src/css/2048.css" />
+    <link rel="stylesheet" type="text/css" href="dest/2048.min.css" />
     <!-- <script type="text/javascript" src="http://192.168.191.1:8080/target/target-script-min.js#anonymous"></script> -->
 </head>
 <body>
@@ -45,11 +45,12 @@
     <!--<script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
 -->
     <script type="text/javascript" src="src/js/sea.js"></script>
+    <!--<script type="text/javascript" src="dest/2048.min.js"></script>-->
     <script type="text/javascript">
         seajs.config({
-            base: './src/js/'
+            base: './dest'
         });
-        seajs.use('main2048', function(main) {
+        seajs.use('index/2048/main2048', function(main) {
             main.newgame();
             document.getElementById('newgamebutton').onclick = main.newgame;
         });
