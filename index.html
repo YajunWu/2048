@@ -7,13 +7,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="format-detection" content="telephone=no" />
     <title>公平价2048</title>
-    <link rel="stylesheet" type="text/css" href="css/2048.css" />
+    <link rel="stylesheet" type="text/css" href="src/css/2048.css" />
     <!-- <script type="text/javascript" src="http://192.168.191.1:8080/target/target-script-min.js#anonymous"></script> -->
 </head>
 <body>
     <header>
         <h1>公平价2048</h1>
-        <a href="javascript:newgame();" id="newgamebutton">New Game</a>
+        <span id="newgamebutton">New Game</span>
         <p>score : <span id="score">0</span></p>
     </header>
 
@@ -44,9 +44,20 @@
 
     <!--<script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
 -->
-    <script type="text/javascript" src="js/support2048.js"></script>
-    <script type="text/javascript" src="js/touch.js"></script>
-    <script type="text/javascript" src="js/showanimation2048.js"></script>
-    <script type="text/javascript" src="js/main2048.js"></script>
+    <script type="text/javascript" src="src/js/sea.js"></script>
+    <script type="text/javascript" src="src/js/support2048.js"></script>
+    <script type="text/javascript" src="src/js/touch.js"></script>
+    <script type="text/javascript" src="src/js/showanimation2048.js"></script>
+    <script type="text/javascript" src="src/js/main2048.js"></script>
+    <script type="text/javascript">
+        seajs.config({
+            base: './src/js/'
+        });
+        seajs.use('main2048', function(main) {
+            main.newgame();
+            document.getElementById('newgamebutton').onclick = main.newgame;
+        });
+         
+    </script>
 </body>
 </html>
