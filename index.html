@@ -48,9 +48,9 @@
     <!--<script type="text/javascript" src="dest/2048.min.js"></script>-->
     <script type="text/javascript">
         seajs.config({
-            base: './dest'
+            //base: 'src/js/'
         });
-        seajs.use('index/2048/main2048', function(main) {
+        seajs.use('main2048', function(main) {
             main.newgame();
             document.getElementById('newgamebutton').onclick = main.newgame;
         });
